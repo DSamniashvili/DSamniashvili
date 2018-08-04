@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Numbers</title>
+</head>
+<style>
+    body{
+           font-family: 'Shadows Into Light', cursive;
+       }
+       button {
+     background-color: salmon;
+     border: none;
+     color: white;
+     padding: 16px 32px;
+     text-align: center;
+     display: inline-block;
+     font-size: 16px;
+     margin: 4px 2px;
+     cursor: pointer;
+     border-radius: 5px;
+     }
+     button:hover {
+     background-color: #008CBA;
+     color: white;
+}
+    span {
+        margin: 5px;
+        padding: 10px 5px;
+        border-radius: 5px;
+        background-color: sandybrown;
+        float: left;
+    }
+    #numbers{
+        width: 800px;
+        height: 300px;
+    }
+    #buttons{
+        width: 800px;
+    }
+</style>
+<body>
+  <h1>#Numbers</h1>
+  <div id="numbers">
+
+  </div>
+
+
+
+<div id="buttons">
+  <button onclick="shuffle()">Shuffle Numbers</button>
+  <button onclick="ascend()">By Ascending</button>
+  <button onclick="descend()">By Descending</button>
+</div>
+
+<script src="../../lib/jquery.min.js"></script>
+   <script src="script.js"></script>
+</body>
+</html>
