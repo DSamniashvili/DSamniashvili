@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .button {
+        margin: 10px 20px;
+        background-color: aquamarine;
+        float: left;
+    }
+
+    #rightwrapper, #values, #leftwrapper {
+        width: 350px;
+        display: inline-block;
+    }
+    </style>
+</head>
+<body>
+<div id="leftwrapper">
+    <div id="header">
+        <h1>Save your Info</h1>
+    </div>
+    <div>Name:</div>
+    <input placeholder="name" type="text" id="input_name">
+    
+    <div>Surame:</div>
+    <input placeholder="surname" type="text" id="input_surname">
+    
+    <div>Age:</div>
+    <input placeholder="age" type="text" id="input_age">
+   
+<div>
+    <button id="save" class="button">Save:</button>
+    <button id="showinfo" class="button">Show Info:</button>
+
+</div>
+</div>
+<div id="rightwrapper">
+
+    <div>Name: </div>
+   
+    <div>Surname: </div>
+    
+    <div>Age: </div>
+    
+</div>
+<div id="values">
+        <div id="innerName"></div>
+        <div id="innerSurname"></div>
+        <div id="innerAge"></div>
+</div>
+
+        <script src="../../Dea/lib/jquery.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+    </html>
