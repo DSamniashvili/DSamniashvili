@@ -6,9 +6,23 @@ for (let i = 1; i <= 150; i++){
 function change(){
 $div.empty();
 $div.append( numArray.map((el) => {
-return `<span>${el}</span>`
+return `<div id="each-number">${el}</div>`
    }).join('')
 );
+
+let eachDiv = document.querySelectorAll('#each-number');
+    // console.log(eachDiv.length)
+    // console.log(eachDiv)
+for(let i=0; i< eachDiv.length; i++){
+    // console.log(eachDiv[i])
+    eachDiv[i].addEventListener('click', function(){
+        // let index = eachDiv[i];
+        // console.log("hello")
+        eachDiv[i].parentNode.removeChild(eachDiv[i])
+        
+    })
+}
+
 }
  
 function shuffle(){
