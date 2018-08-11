@@ -3,12 +3,17 @@ let $div = $('#numbers');
 for (let i = 1; i <= 150; i++){
    numArray.push(i);
 }
+
 function change(){
 $div.empty();
+let modified = []; 
 $div.append( numArray.map((el) => {
 return `<div id="each-number">${el}</div>`
    }).join('')
 );
+
+let deletedItemsArray = [];
+
 
 let eachDiv = document.querySelectorAll('#each-number');
     // console.log(eachDiv.length)
@@ -19,12 +24,35 @@ for(let i=0; i< eachDiv.length; i++){
         // let index = eachDiv[i];
         // console.log("hello")
         eachDiv[i].parentNode.removeChild(eachDiv[i])
-        
+        deletedItemsArray.push(eachDiv[i].innerHTML);
+        return deletedItemsArray;
     })
+    
+}
+console.log(deletedItemsArray);
+
+// function diffArray(arr1, arr2) {
+//     return arr1.concat(arr2).filter(function (val) {
+//         if ((arr1.includes(val) && !arr2.includes(val)))
+//             return val;
+//     });
+    
+//  }
+// let different = diffArray(numArray, deletedItemsArray);
+// console.log(different.length)
+
+
+// modified.length = numArray.length - deletedItemsArray.length
+// console.log(modified.length);
+
+// console.log(deletedItemsArray)
 }
 
-}
- 
+
+
+
+window.onload = change;
+
 function shuffle(){
    function shuffle(array) {
    
@@ -44,6 +72,7 @@ function shuffle(){
       arr = shuffle(numArray);
       console.log(arr);
       change();
+
      
 }
 function ascend(){
@@ -59,3 +88,4 @@ function descend()
    })
    change();
 }
+
