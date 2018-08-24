@@ -1,24 +1,39 @@
 let numArray = [];
-for(let i=0; i<=150; i++) {
+let removedItems = [];
+
+
+for(let i=0; i<=20; i++) {
     numArray.push(i)
 }
 // console.log(numArray)
 let numbersWrapper = document.querySelector('#numbers');
 
 function generateNumbers(){
+    // debugger
     for(let i=0; i<numArray.length; i++) {
         
         let item = document.createElement('div');
         item.className = 'each-number';
         item.innerHTML = numArray[i];
         numbersWrapper.appendChild(item)
-
-        item.addEventListener('click', function(){
-            item.parentNode.removeChild(item)
-        })
     }
+    remove();
 }
 generateNumbers();
+
+//ეს ფუნქცია დავამატე მხოლოდ და ზევით გამოვიძახე, 5 ხაზით ზევით
+function remove(){
+    let eachNumber = document.querySelectorAll('.each-number');
+    for(let i = 0; i< eachNumber.length; i++){
+        eachNumber[i].addEventListener('click', function(){
+            removedItems.push(Number(eachNumber[i].textContent))
+            eachNumber[i].parentNode.removeChild(eachNumber[i]);
+            numArray.splice(eachNumber[i], 1)
+        })
+    }
+
+}
+
 
 function shuffle(){
     numbersWrapper.innerHTML = ''
@@ -53,7 +68,6 @@ function ascend(){
     })
     generateNumbers();
  }
-
 
   
 
@@ -127,4 +141,3 @@ function ascend(){
 //    })
 //    change();
 // }
-
