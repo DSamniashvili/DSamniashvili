@@ -2,7 +2,7 @@ let numArray = [];
 let removedItems = [];
 
 
-for(let i=0; i<=20; i++) {
+for(let i=0; i<=150; i++) {
     numArray.push(i)
 }
 // console.log(numArray)
