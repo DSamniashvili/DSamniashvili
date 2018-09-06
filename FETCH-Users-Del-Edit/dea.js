@@ -1,10 +1,13 @@
 let users = [];
 
-if(localStorage.getItem('users') !== null){
+if(localStorage.getItem('users').length !== null || localStorage.getItem('users').length !==0 ){
     users = JSON.parse(localStorage.getItem('users'))
+    console.log(users.length)
     generateDOM(users);
 }
-else {
+
+else 
+ {
     fetch('https://jsonplaceholder.typicode.com/users')
     .then((res)=> {
         if(res.status === 200){
