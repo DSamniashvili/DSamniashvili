@@ -1,13 +1,16 @@
 let users = [];
 
-if(JSON.parse(localStorage.getItem('users')) !== null){
+if(JSON.parse(localStorage.getItem('users')) !== null && JSON.parse(localStorage.getItem('users')).length != 0){
     users = JSON.parse(localStorage.getItem('users'))
     console.log(users.length)
     generateDOM(users);
 }
-
 else 
  {
+    fetchData()
+}
+
+function fetchData(){
     fetch('https://jsonplaceholder.typicode.com/users')
     .then((res)=> {
         if(res.status === 200){
@@ -19,6 +22,9 @@ else
         generateDOM(users);
     })
 }
+
+console.log(JSON.parse(localStorage.getItem('users')).length)
+console.log(localStorage.getItem('users').length)
 console.log(users)
 
 function generateDOM(usersList){
@@ -52,7 +58,6 @@ function generateDOM(usersList){
 }
 
 function remove(elem){
-    // console.log(elem.target)
     let parent = this.parentNode;
     parent.remove()
     let parentIndex = parseInt(parent.id)
@@ -60,7 +65,6 @@ function remove(elem){
     console.log(parentIndex)
 
     let arr = JSON.parse(localStorage.getItem('users'))
-    // console.log(arr)
     arr.splice(parentIndex, 1)
     console.log(arr)
     localStorage.setItem('users', JSON.stringify(arr))
