@@ -24,10 +24,13 @@ function fetchData(){
 
 
 function generateDOM(usersList){
-    
+    let container = document.createElement('div');
+    container.setAttribute('id', 'container')
+    document.body.appendChild(container)
     usersList.forEach((el, index) => {
         let wrapper = document.createElement('div');
         wrapper.setAttribute('id', `${index}`)
+        wrapper.className = 'userDiv'
         let name = document.createElement('h4');
         name.textContent = el.name
     
@@ -44,7 +47,7 @@ function generateDOM(usersList){
         editBtn.textContent = 'edit'
         editBtn.className = 'edit'
     
-        document.body.appendChild(wrapper)
+        container.appendChild(wrapper)
         wrapper.appendChild(name);
         wrapper.appendChild(email)
         wrapper.appendChild(removeBtn)
