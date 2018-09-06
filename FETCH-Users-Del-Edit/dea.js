@@ -70,16 +70,20 @@ function remove(elem){
 function edit(el){
     let arr = JSON.parse(localStorage.getItem('users'))
     let changeName = document.querySelector('h4')
+    let changeEmail = document.querySelector('h5')
  
     let parent = this.parentNode;
     let parentIndex = parseInt(parent.id)
-
     let indexInArr = arr[parentIndex]
 
-    let toChange = prompt('change the value');
+    let toChangeName = prompt('change the name');
+    let toChangeEmail = prompt('change the email')
 
-    indexInArr.name = toChange
-    changeName.textContent = toChange
+    indexInArr.name = toChangeName
+    changeName.textContent = toChangeName
+
+    indexInArr.email = toChangeEmail;
+    changeEmail.textContent = toChangeEmail;
     console.log(indexInArr)
 
     localStorage.setItem('users', JSON.stringify(arr))
