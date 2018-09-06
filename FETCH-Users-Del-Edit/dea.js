@@ -20,6 +20,9 @@ function fetchData(){
         localStorage.setItem('users', JSON.stringify(json))
         generateDOM(users);
     })
+    .catch((err)=> {
+        console.log(err.message)
+    })
 }
 
 
@@ -41,9 +44,12 @@ function generateDOM(usersList){
         removeBtn.className = 'remove'
         removeBtn.textContent = 'remove'
         removeBtn.addEventListener('click', remove)
+        // removeBtn.onclick = remove;
 
         let editBtn = document.createElement('button');
         editBtn.addEventListener('click', edit)
+        // editBtn.onclick = edit;
+
         editBtn.textContent = 'edit'
         editBtn.className = 'edit'
     
@@ -56,7 +62,7 @@ function generateDOM(usersList){
     // remove()
 }
 
-function remove(elem){
+function remove(){
     let parent = this.parentNode;
     parent.remove()
     let parentIndex = parseInt(parent.id)
@@ -70,7 +76,7 @@ function remove(elem){
 
 }
 
-function edit(el){
+function edit(){
     let arr = JSON.parse(localStorage.getItem('users'))
     let changeName = document.querySelector('h4')
     let changeEmail = document.querySelector('h5')
