@@ -2,7 +2,6 @@ let users = [];
 
 if(JSON.parse(localStorage.getItem('users')) !== null && JSON.parse(localStorage.getItem('users')).length != 0){
     users = JSON.parse(localStorage.getItem('users'))
-    console.log(users.length)
     generateDOM(users);
 }
 else 
@@ -23,9 +22,6 @@ function fetchData(){
     })
 }
 
-console.log(JSON.parse(localStorage.getItem('users')).length)
-console.log(localStorage.getItem('users').length)
-console.log(users)
 
 function generateDOM(usersList){
     
@@ -71,7 +67,22 @@ function remove(elem){
 
 }
 
-function edit(e){
-    console.log('edit')
+function edit(el){
+    let arr = JSON.parse(localStorage.getItem('users'))
+    let changeName = document.querySelector('h4')
+ 
+    let parent = this.parentNode;
+    let parentIndex = parseInt(parent.id)
+
+    let indexInArr = arr[parentIndex]
+
+    let toChange = prompt('change the value');
+
+    indexInArr.name = toChange
+    changeName.textContent = toChange
+    console.log(indexInArr)
+
+    localStorage.setItem('users', JSON.stringify(arr))
+
 }
 
