@@ -1,6 +1,6 @@
 let users = [];
 
-if(localStorage.getItem('users').length !== null || localStorage.getItem('users').length !==0 ){
+if(JSON.parse(localStorage.getItem('users')).length !==0 ){
     users = JSON.parse(localStorage.getItem('users'))
     console.log(users.length)
     generateDOM(users);
