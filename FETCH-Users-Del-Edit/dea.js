@@ -82,11 +82,24 @@ function edit(el){
     indexInArr.name = toChangeName
     changeName.textContent = toChangeName
 
-    indexInArr.email = toChangeEmail;
-    changeEmail.textContent = toChangeEmail;
+    if(validateEmail(toChangeEmail)){
+        indexInArr.email = toChangeEmail;
+        changeEmail.textContent = toChangeEmail;
+    }
+    else {
+        alert('enter valid email address')
+        return;
+    }
+    
     console.log(indexInArr)
 
     localStorage.setItem('users', JSON.stringify(arr))
 
+}
+
+
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
 }
 
