@@ -19,14 +19,19 @@ function fetchData(){
     .then((json)=> {
         localStorage.setItem('users', JSON.stringify(json))
         generateDOM(users);
+        
+
     })
     .catch((err)=> {
         console.log(err.message)
     })
 }
 
+console.log(localStorage.length)
+console.log(localStorage.key(0))
 
 function generateDOM(usersList){
+    // debugger
     let container = document.createElement('div');
     container.setAttribute('id', 'container')
     document.body.appendChild(container)
@@ -61,8 +66,9 @@ function generateDOM(usersList){
     });
     // remove()
 }
-
+/*
 function remove(){
+    // debugger
     let parent = this.parentNode;
     parent.remove()
     let parentIndex = parseInt(parent.id)
@@ -75,8 +81,29 @@ function remove(){
     localStorage.setItem('users', JSON.stringify(arr))
 
 }
+*/
+
+
+function remove(){
+    let parent = this.parentNode;
+    let parentIndex = parseInt(parent.id)
+    // console.log(parent)
+    console.log(parentIndex)
+    parent.remove()
+
+    let arr = JSON.parse(localStorage.getItem('users'))
+    arr.splice(parentIndex, 1)
+    // console.log(arr)
+    localStorage.setItem('users', JSON.stringify(arr))
+    for(let i = 0 ; i< document.getElementsByClassName('userDiv').length; i++){
+      document.getElementsByClassName('userDiv')[i].setAttribute('id',i);
+    }
+}
+
+
 
 function edit(){
+    // debugger
     let arr = JSON.parse(localStorage.getItem('users'))
     let changeName = document.querySelector('h4')
     let changeEmail = document.querySelector('h5')
