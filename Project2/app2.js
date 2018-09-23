@@ -9,7 +9,7 @@
     //get the width and height of a snake at the beginning
     let box = 20;
     // let snakeH = 20;
- 
+    
     let d = 'RIGHT'; //direction
   
   
@@ -35,14 +35,14 @@ function getDirections(event){
         ctx.closePath();
     }
  
-    let snakeL = 4;
+    let snakeL = 4; // Must be dynamical
     let snake = [];
  
     for(let i = snakeL; i>=0; i--){
         snake.push(
             {
             x: i,
-            y: 0
+            y: 2
             }
         );
     }
@@ -73,7 +73,6 @@ function getDirections(event){
         function drawScore(x){
             ctx.font = '15pt Arial';
             ctx.fillStyle = 'black';
-            // ctx.fillText = 'Hello';
             ctx.fillText('your score is: ' + x, (cW/2 - cW/4 + box*2), cH - box*2)
         }
  
@@ -96,7 +95,9 @@ function getDirections(event){
         if(d == 'UP') snakeY--;
         if(d == 'DOWN') snakeY++;
         if(snakeX < 0 || snakeY < 0 || snakeX >= cW/box || snakeY >=cH/box || checkCollision(snakeX, snakeY, snake)){
-            clearInterval(game)
+            // clearInterval(game)
+            //function to show the game over
+            showGameOver();
         }
  
         if(snakeX == food.x && snakeY == food.y){
@@ -119,7 +120,7 @@ function getDirections(event){
         snake.unshift(newHead);
 
 
-        scoreFunc();
+        scoreFunc(); //localStorage
         drawScore(score);
     }
  
@@ -138,6 +139,30 @@ function scoreFunc(){
     else {
         localStorage.setItem('highest', score);
     }    
+}
+
+function showGameOver(){
+    ctx.clearRect(0, 0, cW, cH);
+    ctx.beginPath();
+    ctx.fillStyle = 'black';
+    ctx.fillRect(0,0, cW, cH);
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.fillStyle = '#fff';
+    ctx.font = '20pt Arial';
+    ctx.fillText('Game Over', cW/3, cH/2);
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.fillStyle = 'red';
+    ctx.font = '15pt Arial';
+    ctx.fillText(`Your max score achieved is: ${localStorage.getItem('highest')}`, 10, 20)
+    ctx.fillText(`your current score is: ${score}`, 10 , 50);
+    ctx.closePath();
+
+    // clearInterval(game)
+
 }
 
 
