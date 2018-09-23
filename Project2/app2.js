@@ -1,6 +1,28 @@
     let canvas = document.querySelector('#snake');
     let ctx = canvas.getContext('2d');
+
+    if(localStorage.getItem('boardW') !== null){
+        canvas.width = localStorage.getItem('boardW');
+    }
+    else {
+        canvas.width = 400;
+    }
+    if(localStorage.getItem('boardH') !== null){
+        canvas.height = localStorage.getItem('boardH');
+    }
+    else {
+        canvas.height = 400;
+    }
  
+    // if(localStorage.getItem('boardW') !== null && localStorage.getItem('boardH') !== null){
+    //     canvas.width = localStorage.getItem('boardW');
+    //     canvas.height = localStorage.getItem('boardH');
+    // }
+    // else {
+    //     canvas.width = 400;
+    //     canvas.height = 400;
+    // }
+
     let cW = canvas.width;
     let cH = canvas.height;
  
@@ -35,7 +57,13 @@ function getDirections(event){
         ctx.closePath();
     }
  
-    let snakeL = 4; // Must be dynamical
+    let snakeL;
+    if(localStorage.getItem('snake-length')){
+        snakeL = localStorage.getItem('snake-length');
+    }
+    else {
+        snakeL = 4;
+    }
     let snake = [];
  
     for(let i = snakeL; i>=0; i--){
