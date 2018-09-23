@@ -1,20 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        canvas {
-        border: 1px solid black;
-    }
-    </style>
-    
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-    <canvas id="snake" width="600" height="400"></canvas>
+<body>
+    <div id="heading">
+            <h1>Snake Game</h1>
+    </div>
+
+    <div id="wrapper">
+            <canvas id="snake"></canvas>
+
+        <div id="inputs">
+            <h2>Make the parameters of the game:</h2>
+            <div class="option">board size:</div>
+            <input placeholder="board width" type="text" id="board_width" onchange="saveInLocal()">
+            <input placeholder="board height" type="text" id="board_height" onchange="saveInLocal()">
+
+            <div class="option">Number of apples:</div>
+            <input placeholder="enter the number of apples" type="text" id="apples">
+
+            <div class="option">Initial length of a snake:</div>
+            <input placeholder="Snake length" type="text" id="snake_length" onchange="saveInLocal()">
+
+            <div class="option">Level:</div>
+            <select name="Levels" id="levels" class="option">
+                <option value="novice" class="level" id="novice"onchange="saveInLocal()">Novice</option>
+                <option value="intermediate" class="level" id="intermediate"onchange="saveInLocal()">Intermediate</option>
+                <option value="hard" class="level" id="hard"onchange="saveInLocal()">Hard</option>
+            </select>
+            <div class="option">Enter the speed of a snake</div>
+            <input placeholder="Snake Speed" type="text" id="snake_speed"onchange="saveInLocal()">
+            <div>
+                <!-- <button id="save" class="button" onclick="saveInLocal()">Save</button> -->
+            </div>
+        </div>
+        
+    </div>
+
+
     <script src="app2.js"></script>
+    <script src="user.js"></script>
 </body>
+
 </html>
