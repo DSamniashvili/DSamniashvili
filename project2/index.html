@@ -32,10 +32,11 @@
 
 
             <div class="option">Level:</div>
-            <select name="Levels" id="levels" class="option">
-                <option value="novice" class="level" id="novice">Novice</option>
-                <option value="intermediate" class="level" id="intermediate">Intermediate</option>
-                <option value="hard" class="level" id="hard">Hard</option>
+            <select name="Levels" id="levels" class="option" onchange="saveLvl()">
+                <option disabled selected value = "disabled"> -- choose the level -- </option>
+                <option value="novice">Novice</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="hard">Hard</option>
             </select>
 
 
