@@ -8,35 +8,26 @@ let intermediate = document.querySelector('#intermediate');
 let hard = document.querySelector('#hard');
 let speed = document.querySelector('#snake_speed');
 
-let level = document.querySelectorAll('.level');
-// console.log(level[0]);
 
-let saveBtn = document.querySelector('#save');
 
+//save width and height in local storage
 function saveInLocalWH() {
     localStorage.setItem('boardW', boardW.value);
     localStorage.setItem('boardH', boardH.value);
 }
-
-function saveSnakeLength(){
+// save snake length in local storage
+function saveSnakeLength() {
     localStorage.setItem('snake-length', snakeLength.value);
 }
-function saveSnakeSpeed(){
+// save snake speed
+function saveSnakeSpeed() {
     localStorage.setItem('snake-speed', speed.value);
 }
-
-function saveApples(){
+// save number of apples in local storage
+function saveApples() {
     localStorage.setItem('apples', applesQ.value);
 }
 
-
-    // if(level[0].value == 'novice'){
-    //     localStorage.setItem('level', level[0].value);
-    // }
-    // if(level[1].value == 'intermediate'){
-    //     localStorage.setItem('level', level[1].value);
-    // }
-
-
-
-// console.log(level.length)
+function saveLvl() {
+    localStorage.setItem('level', levels.value);
+}
