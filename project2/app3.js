@@ -57,19 +57,27 @@ else {
     snakeL = 4;
 }
 
-    
 let snake = [];
-for(let i = snakeL*parseInt(localStorage.getItem('apples')); i > 0; i--){
-// for (let i = 0; i < snakeL*parseInt(localStorage.getItem('apples')); i++) {
-// for (let i = snakeL; i >= 0; i--) {
-    snake.push({
+
+if(localStorage.getItem('apples') !== null){
+    for(let i = snakeL*parseInt(localStorage.getItem('apples')); i > 0; i--){
+        snake.push({
             x: i,
             y: 2
         });
+    }
+}
+else {
+    for (let i = snakeL; i > 0; i--) {
+        snake.push({
+                x: i,
+                y: 2
+            });
+    }
 }
 
-console.log(snake);
-console.log(snake.length)
+
+
 
 
 
@@ -84,7 +92,6 @@ if(localStorage.getItem('apples') !== null){
         })
     }
 }
-
 else {
     food = [{
         x: Math.floor(Math.random() * (cW / box)),
@@ -121,7 +128,7 @@ function drawScore(x) {
 }
 
 function draw() {
-    
+    // debugger
     ctx.clearRect(0, 0, cW, cH);
     // debugger
     for (let i = 0; i < snake.length; i++) {
@@ -136,7 +143,7 @@ function draw() {
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
 
-    // console.log(snakeX)
+    console.log(snakeX)
 
 
     if (d == 'RIGHT') snakeX++;
@@ -146,7 +153,6 @@ function draw() {
     if (snakeX < 0 || snakeY < 0 || snakeX >= cW / box || snakeY >= cH / box || checkCollision(snakeX, snakeY, snake)) {
         //function to show the game over
         showGameOver();
-        
     }
 
     for(let i=0; i<food.length; i++){
