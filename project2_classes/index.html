@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="heading">
+            <h1>Snake Game</h1>
+    </div>
+
+    <div id="wrapper">
+            <canvas id="snake"></canvas>
+
+        <div id="inputs">
+            <h2>Make the parameters of the game:</h2>
+            <div class="option">board size:</div>
+            <input placeholder="board width" type="text" id="board_width" onchange="saveInLocalWH()">
+            <input placeholder="board height" type="text" id="board_height" onchange="saveInLocalWH()">
+
+            <div class="option">Number of apples:</div>
+            <input placeholder="enter the number of apples" type="text" id="apples" onchange="saveApples()">
+
+            <div class="option">Initial length of a snake:</div>
+            <input placeholder="Snake length" type="text" id="snake_length" onchange="saveSnakeLength()">
+
+
+
+            <div class="option">Level:</div>
+            <select name="Levels" id="levels" class="option" onchange="saveLvl()">
+                <option disabled selected value = "disabled"> -- choose the level -- </option>
+                <option value="novice">Novice</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="hard">Hard</option>
+            </select>
+
+
+            <div class="option">Enter the speed of a snake</div>
+            <input placeholder="Snake Speed" type="text" id="snake_speed"onchange="saveSnakeSpeed()">
+            <div>
+                <!-- <button id="save" class="button" onclick="saveInLocal()">Save</button> -->
+            </div>
+        </div>
+        
+    </div>
+
+<button id="btn">button to start</button>
+
+    <script src="user.js"></script>
+    <script src="JS/canvas.js"></script>
+    <script src="JS/config.js"></script>
+    <script src="JS/snake.js"></script> 
+    <script src="JS/apple.js"></script>
+    <script src="JS/app.js"></script>
+</body>
+
+</html>
