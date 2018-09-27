@@ -43,3 +43,37 @@ function saveApples() {
 function saveLvl() {
     localStorage.setItem('level', levels.value);
 }
+
+
+
+// function checkForSpeed(){
+//     if(localStorage.getItem('level') == 'novice' 
+//     || localStorage.getItem('level') == 'intermediate'  
+//     || localStorage.getItem('level') == 'hard' 
+//     && parseInt(localStorage.getItem('snake-speed')) > 50){
+//         alert(`You\'re automatically moved to the next Level!`);
+//         document.querySelector('#hidden').innerHTML = 'Level automatically updated!'
+//     }
+// }
+
+
+// console.log(parseInt(localStorage.getItem('snake-speed')) > 50);
+
+function checkForSpeed(){
+
+if(
+localStorage.getItem('level') == 'novice' && parseInt(localStorage.getItem('snake-speed') > 50) || 
+localStorage.getItem('level') == 'intermediate' && parseInt(localStorage.getItem('snake-speed') > 50)  || 
+localStorage.getItem('hard') == 'hard' && parseInt(localStorage.getItem('snake-speed') > 50)
+)
+{
+    alert(`You\'re automatically moved to the next Level!`);
+    document.querySelector('#hidden').innerHTML = 'Level automatically updated!'
+}
+}
+
+// console.log(parseInt(localStorage.getItem('snake-speed')))
+// console.log(typeof((parseInt(localStorage.getItem('snake-speed')))));
+// console.log(parseInt(localStorage.getItem('snake-speed')) > 50)
+// console.log(parseInt(localStorage.getItem('snake-speed')) > 80)
+
