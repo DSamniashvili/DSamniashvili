@@ -97,7 +97,7 @@ function draw() {
     for (let i = 0; i < snakeClass.body.length; i++) {
         let x = snakeClass.body[i].x; // x coordinates of snake
         let y = snakeClass.body[i].y; //y coordinates of snake
-        console.log(snakeClass.body)
+//         console.log(snakeClass.body)
         snakeClass.draw(x, y, 'green');
 
     }
