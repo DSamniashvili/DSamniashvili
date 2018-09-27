@@ -1,0 +1,3 @@
+class Apple extends Snake {
+
+}
