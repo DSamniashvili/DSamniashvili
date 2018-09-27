@@ -192,6 +192,7 @@ function startGame() {
 
         if (localStorage.getItem('level') == 'novice') {
             if (localStorage.getItem('snake-speed') !== null) {
+               checkForSpeed();
                 game = setInterval(draw, 150 - parseInt(localStorage.getItem('snake-speed')))
             }
             else {
