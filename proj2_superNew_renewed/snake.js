@@ -16,7 +16,7 @@ class Snake extends Canvas {
         }
         for (let i = snakeClass.snakeL; i > 0; i--) {
             snakeClass.body.push({
-                x: i,
+                x: 0,
                 y: 2
             });
         }

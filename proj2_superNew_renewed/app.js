@@ -36,15 +36,17 @@ console.log(appleClass.body)
 function draw() {
     canvasClass.ctx.clearRect(0, 0, cW, cH);
 
-    for (let i = 0; i < snakeClass.body.length; i++) {
-        let x = snakeClass.body[i].x; 
-        let y = snakeClass.body[i].y; 
-        snakeClass.draw(x, y, 'green');
-    }
+
 
     for (let i = 0; i < appleClass.body.length; i++) {
         appleClass.draw(appleClass.body[i].x, appleClass.body[i].y, 'red')
     }
+    for (let i = 0; i < snakeClass.body.length; i++) {
+        let x = snakeClass.body[i].x;
+        let y = snakeClass.body[i].y;
+        snakeClass.draw(x, y, 'green');
+    }
+
 
     let snakeX = snakeClass.body[0].x;
     let snakeY = snakeClass.body[0].y;
@@ -54,7 +56,7 @@ function draw() {
     if (d == 'LEFT') snakeX--;
     if (d == 'UP') snakeY--;
     if (d == 'DOWN') snakeY++;
-    if (snakeX < 0 || snakeY < 0 || snakeX >= cW / snakeClass.box || snakeY >= cH / snakeClass.box 
+    if (snakeX < 0 || snakeY < 0 || snakeX >= cW / snakeClass.box || snakeY >= cH / snakeClass.box
         || snakeClass.checkCollision(snakeX, snakeY, snakeClass.body)) {
         canvasClass.showGameOver();
         changeBtnContent();
@@ -62,30 +64,31 @@ function draw() {
 
     }
 
+    eatApple(snakeX, snakeY, appleClass.body);
 
-
-    //main logic goes here
-    for (let i = 0; i < appleClass.body.length; i++) {
-        if (snakeX == appleClass.body[i].x && snakeY == appleClass.body[i].y) {
-            canvasClass.score += 10;
-            appleClass.body[i] = {
-                x: Math.floor(Math.random() * (cW / canvasClass.box)),
-                y: Math.floor(Math.random() * (cH / canvasClass.box))
-            }
-        }
-        else {
-            snakeClass.body.pop();
-        }
-
-        let newHead = {
-            x: snakeX,
-            y: snakeY
-        };
-        snakeClass.body.unshift(newHead);
-    }
-
+    let newHead = {
+        x: snakeX,
+        y: snakeY
+    };
+    
+    snakeClass.body.unshift(newHead);
     canvasClass.scoreFunc();
     canvasClass.drawScore(canvasClass.score);
+}
+
+
+function eatApple(headX, headY, body) {
+    for (let i = 0; i < body.length; i++) {
+        if (headX == body[i].x && headY == body[i].y) {
+            canvasClass.score += 10;
+            body[i] = {
+                x: Math.floor(Math.random() * (cW / canvasClass.box)),
+                y: Math.floor(Math.random() * (cH / canvasClass.box))
+            };
+            return;
+        }
+    }
+    snakeClass.body.pop();
 }
 
 
