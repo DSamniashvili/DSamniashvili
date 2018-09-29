@@ -20,6 +20,7 @@ class Snake extends Canvas {
                 y: 2
             });
         }
+
     }
     checkCollision(x, y, array) {
         for (let i = 0; i < array.length; i++) {
@@ -39,7 +40,6 @@ class Snake extends Canvas {
         ) {
             console.log('inside')
             alert(`You\'re automatically moved to the next Level!`);
-            // document.querySelector('#hidden').innerHTML = 'Level updated!'
         }
     }
 }

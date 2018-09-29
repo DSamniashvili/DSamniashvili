@@ -97,20 +97,20 @@ function startGame() {
         if (localStorage.getItem('level') == 'novice') {
             if (localStorage.getItem('snake-speed') !== null) {
                 snakeClass.checkForSpeed();
-                game = setInterval(draw, 150 - parseInt(localStorage.getItem('snake-speed')))
+                game = setInterval(draw, 180 - parseInt(localStorage.getItem('snake-speed')))
             }
             else {
-                game = setInterval(draw, 150)
+                game = setInterval(draw, 180)
             }
         }
 
         if (localStorage.getItem('level') == 'intermediate') {
             if (localStorage.getItem('snake-speed') !== null) {
                 snakeClass.checkForSpeed();
-                game = setInterval(draw, 100 - parseInt(localStorage.getItem('snake-speed')))
+                game = setInterval(draw, 120 - parseInt(localStorage.getItem('snake-speed')))
             }
             else {
-                game = setInterval(draw, 100);
+                game = setInterval(draw, 120);
             }
         }
         if (localStorage.getItem('level') == 'hard') {
