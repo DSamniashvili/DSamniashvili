@@ -20,7 +20,6 @@ class Snake extends Canvas {
                 y: 2
             });
         }
-        console.log(snakeClass.snakeL);
     }
     checkCollision(x, y, array) {
         for (let i = 0; i < array.length; i++) {

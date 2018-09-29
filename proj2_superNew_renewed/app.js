@@ -30,8 +30,6 @@ snakeClass.getSnakeLength();
 //make the food
 appleClass.createFood();
 
-console.log(appleClass.body)
-
 
 function draw() {
     canvasClass.ctx.clearRect(0, 0, cW, cH);
