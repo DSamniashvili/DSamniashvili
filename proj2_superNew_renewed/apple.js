@@ -14,7 +14,7 @@ class Apple extends Canvas{
             for (let i = 0; i < parseInt(localStorage.getItem('apples')); i++) {
                 this.body.push({
                     x: Math.floor(Math.random() * (this.canvas.width / this.box)),
-                    y: Math.floor(Math.random() * (this.canvas.width / this.box))
+                    y: Math.floor(Math.random() * (this.canvas.height / this.box))
                 })
             }
         }
