@@ -31,9 +31,10 @@ body {
 }
 
 #footer {
-    position: fixed;
+/*     position: fixed; */
     bottom: 0;
-    margin-top: 200px;
+/*     margin-top: 200px; */
+    margin-top: 65px;
     margin-bottom: 0;
     width: 97%;
     color: #fff;
