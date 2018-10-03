@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
 }
+html, body {margin: 0; height: 100%; overflow: hidden}
 
 #wrapper {
     display: flex;  
@@ -34,7 +35,7 @@ body {
 /*     position: fixed; */
     bottom: 0;
 /*     margin-top: 200px; */
-    margin-top: 65px;
+    margin-top: 55px;
     margin-bottom: 0;
     width: 97%;
     color: #fff;
