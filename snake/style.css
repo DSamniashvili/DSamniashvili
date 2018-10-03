@@ -15,7 +15,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
     align-items: center;
 
 }
-#header, #footer{
+#header {
     width: 100%;
     padding: 20px; 
     background-color: salmon;
@@ -39,6 +39,8 @@ html, body {margin: 0; height: 100%; overflow: hidden}
     margin-bottom: 0;
     width: 97%;
     color: #fff;
+    padding: 12px;
+    background-color: salmon;
 }
 
 #userInp {
