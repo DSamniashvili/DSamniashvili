@@ -1,0 +1,139 @@
+.footer {
+  background-color: #252525;
+  padding: 80px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.left {
+  width: 40%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 10%;
+  .copy {
+    margin-top: 20px;
+    color: #efefef;
+    font-size: 12px;
+  }
+}
+
+.right {
+  width: 60%;
+  margin-top: 50px;
+}
+
+.footer-nav {
+  ul {
+    display: flex;
+    justify-content: right;
+    flex-direction: row;
+    margin-right: 10%;
+
+    li {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 30px;
+      margin-left: 10px;
+      padding: 10px;
+
+      a {
+        margin-top: 20px;
+        margin-left: 10px;
+        font-size: 1rem;
+        text-transform: uppercase;
+        color: white;
+        &.footerHome {
+          color: #fbb710;
+        }
+        &:hover {
+          color: $yellow;
+          transform: scale(1.1);
+          transition: 1s;
+        }
+      }
+      &:hover {
+        &:before {
+          width: 5%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 850px) {
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+ 
+  .left {
+    align-items: center;
+    margin-left: 0;
+  }
+
+  .footer-nav {
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-right: 0;
+  
+      li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+        margin-left: 0;
+  
+        a {
+          margin-left: 0;
+          }
+        }
+        
+      }
+    }
+  }
+
+@media only screen and (max-width: 480px) { 
+
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+ 
+  .left {
+    align-items: center;
+    margin-left: 0;
+  }
+
+  .footer-nav {
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-right: 0;
+  
+      li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+        margin-left: 0;
+  
+        a {
+          margin-left: 0;
+          }
+        }
+        
+      }
+    }
+  }

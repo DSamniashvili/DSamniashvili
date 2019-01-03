@@ -1,0 +1,138 @@
+.form--contactUs--wrapper {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  h1 {
+    width: 100%;
+    padding: 20px 0;
+    background-color: $darkgray;
+    color: $gray;
+    text-align: center;
+    margin-top: 70px;
+  }
+}
+.form--contactUs--container {
+  margin: 5% 0 5% 0;
+  width: 100%;
+  max-width: 945px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.form--contactUs {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.contactus--contact--info {
+  width: 40%;
+  max-height: 240px;
+  background-color: #3c3c3c;
+  color: $gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  .contact--info {
+    div {
+      text-decoration: none;
+      color: $gray;
+      &:hover {
+        color: $yellow;
+        cursor: grab;
+        transform: scale(1.05);
+        transition: 1s;
+      }
+    }
+    display: flex;
+    justify-content: space-between;
+  }
+  i {
+    font-size: 20pt;
+    padding: 0 20px;
+    color: $gray;
+  }
+}
+.form--contactUs h1 {
+  font-size: 20pt;
+  color: #808080;
+}
+.form--contactUs > label {
+  display: flex;
+  width: 100%;
+}
+.form--contactUs > label > p {
+  padding-right: 20px;
+}
+.form--contactUs > label > input,
+.form--contactUs > label > textarea {
+  border: none;
+  border-bottom: 1px solid gray;
+  width: 80%;
+}
+.form--contactUs > label > i {
+  font-size: 25pt;
+  padding: 0 20px;
+  color: #808080;
+}
+.form--contactUs {
+  button {
+    background-color: $yellow;
+    border: none;
+    color: white;
+    width: 90%;
+    padding: 15px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 20px;
+    margin: 20px auto 0 20px;
+    &:hover {
+      background-color: #4caf50;
+      transition: 1s;
+    }
+  }
+}
+.show-confirm-message {
+  width: 200px;
+  margin: 0 auto;
+  background-color: green;
+}
+
+@media only screen and (max-width: 850px) {
+  .form--contactUs--wrapper {
+    width: 100%;
+  }
+
+  .form--contactUs--container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .form--contactUs {
+    width: 80%;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .contactus--contact--info {
+    width: 100%;
+    margin-top: 2%;
+
+    * {
+      padding: 1% 0;
+    }
+    .contact--info {
+      display: flex;
+      justify-content: flex-start;
+      width: 90%;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+  }
+}
